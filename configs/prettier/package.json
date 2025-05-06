@@ -1,0 +1,32 @@
+{
+  "name": "@meow-double/prettier",
+  "version": "1.0.0",
+  "description": "Prettier config for code",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "prettier"
+  ],
+  "author": {
+    "name": "Meow-Double🦈",
+    "url": "https://github.com/Meow-Double"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    ".prettierrc.js"
+  ],
+  "scripts": {
+    "format": "prettier --write \"*.js\""
+  },
+  "lint-staged": {
+    "*.js": "prettier --write"
+  },
+  "peerDependencies": {
+    "prettier": "^3.5.3"
+  },
+  "dependencies": {
+    "prettier": "^3.5.3"
+  }
+}

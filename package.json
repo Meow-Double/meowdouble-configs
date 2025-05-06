@@ -1,0 +1,22 @@
+{
+  "name": "moewdouble-configs",
+  "license": "MIT",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [
+    "prettier"
+  ],
+  "author": {
+    "name": "Meow-Double🦈",
+    "url": "https://github.com/Meow-Double"
+  },
+  "scripts": {
+
+  },
+  "workspaces": [
+    "configs/*"
+  ],
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
