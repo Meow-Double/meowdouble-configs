@@ -1,0 +1,36 @@
+{
+  "name": "@meow-double/stylelint",
+  "description": "Stylelint config for your style",
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [
+    "stylelint"
+  ],
+  "author": {
+    "name": "Meow-Double🦈",
+    "url": "https://github.com/Meow-Double"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    ".stylelintrc.js"
+  ],
+  "scripts": {
+    "lint:css": "npx stylelint '**/*.css'"
+  },
+  "lint-staged": {
+    "*.css": [
+      "stylelint --fix"
+    ]
+  },
+  "peerDependencies": {
+    "stylelint": "^16.19.1"
+  },
+  "dependencies":{
+    "stylelint": "^16.19.1",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-standard": "^38.0.0"
+  }
+}

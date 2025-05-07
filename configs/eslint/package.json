@@ -1,0 +1,43 @@
+{
+  "name": "@meow-double/eslint",
+  "description": "Eslint config for code",
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": ["eslint", "typescript", "react"],
+  "author": {
+    "name": "Meow-Double🦈",
+    "url": "https://github.com/Meow-Double"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    ".prettierrc.js"
+  ],
+  "scripts": {
+    "lint:ts": "eslint . ",
+    "lint:ts:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-simple-import-sort": "^12.1.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.ts": [
+      "eslint --fix"
+    ]
+  }
+
+}
