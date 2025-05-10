@@ -1,7 +1,7 @@
 ### Configs
 ✅prettier  
 ✅stylelint  
-eslint  
+✅eslint  
 jest + rtl  
 vitest + rtl  
 storybook  

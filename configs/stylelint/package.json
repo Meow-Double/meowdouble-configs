@@ -11,6 +11,9 @@
     "name": "Meow-Double🦈",
     "url": "https://github.com/Meow-Double"
   },
+  "repository": {
+    "url": "https://github.com/Meow-Double/meowdouble-configs/tree/main/configs/stylelint"
+  },
   "publishConfig": {
     "access": "public"
   },

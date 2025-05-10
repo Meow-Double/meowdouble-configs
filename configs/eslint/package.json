@@ -1,35 +1,30 @@
 {
   "name": "@meow-double/eslint",
-  "description": "Eslint config for code",
+  "description": "Eslint config for your code",
   "license": "MIT",
   "version": "1.0.0",
   "main": "index.js",
-  "keywords": ["eslint", "typescript", "react"],
+  "keywords": [
+    "eslint"
+  ],
   "author": {
     "name": "Meow-Double🦈",
     "url": "https://github.com/Meow-Double"
+  },
+  "repository": {
+    "url": "https://github.com/Meow-Double/meowdouble-configs/tree/main/configs/eslint"
   },
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    ".prettierrc.js"
+    ".eslint.cjs"
   ],
   "scripts": {
-    "lint:ts": "eslint . ",
-    "lint:ts:fix": "eslint . --fix"
-  },
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.0.2",
-    "eslint": "^8.57.1",
-    "eslint-config-prettier": "^10.1.2",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.4.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "eslint-plugin-simple-import-sort": "^12.1.1"
+    "lint:ts": "npx eslint --config .eslintrc.cjs \"src/**/*.{ts,tsx}\"",
+    "lint:js": "npx eslint --config .eslintrc.cjs \"src/**/*.{js,jsx}\"",
+    "lint:ts:fix": "npx eslint --config .eslintrc.cjs \"src/**/*.{ts,tsx}\" --fix",
+    "lint:js:fix": "npx eslint --config .eslintrc.cjs \"src/**/*.{js,jsx}\" --fix"
   },
   "lint-staged": {
     "*.js": [
@@ -38,6 +33,19 @@
     "*.ts": [
       "eslint --fix"
     ]
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-custom": "file:rules/custom/eslint-plugin-custom",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-simple-import-sort": "^12.1.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/utils": "^8.32.0"
   }
-
 }
