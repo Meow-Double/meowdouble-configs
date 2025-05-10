@@ -10,13 +10,10 @@
     "name": "Meow-Double🦈",
     "url": "https://github.com/Meow-Double"
   },
-  "scripts": {
-
-  },
+  "scripts": {},
   "workspaces": [
     "configs/*"
   ],
   "devDependencies": {
-    "prettier": "^3.3.3"
   }
 }

@@ -1,4 +1,4 @@
-# Eslint config👔
+# Eslint config🧹
 This npm package include eslind config for your code.
 
 

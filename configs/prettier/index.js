@@ -1,4 +1,3 @@
 const prettier = require('./.prettierrc.js');
 
-module.export = { prettier }
-
+module.exports = { prettier };

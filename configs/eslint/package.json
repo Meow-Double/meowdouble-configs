@@ -2,7 +2,7 @@
   "name": "@meow-double/eslint",
   "description": "Eslint config for your code",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "keywords": [
     "eslint"
@@ -18,7 +18,9 @@
     "access": "public"
   },
   "files": [
-    ".eslint.cjs"
+    ".eslintrc.cjs",
+    "settings/**/*",
+    "rules/**/*"
   ],
   "scripts": {
     "lint:ts": "npx eslint --config .eslintrc.cjs \"src/**/*.{ts,tsx}\"",

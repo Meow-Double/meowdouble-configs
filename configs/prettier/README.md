@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-# Prettier config🚩
-
-
-### This npm package include prettier config for your code.
-
-📃Prettier config needed for formating your code
-=======
 # Prettier config🚩
 
 
@@ -55,14 +47,22 @@ module.exports = prettier;
 ```
 </br>
 
-#### Script
+### Script
 You need to add script on your <b>package.json</b>  
 
 
+**For JS**
+
 ```
-    "format": "prettier --write \"*.js\"",
-    "format:fix": "prettier --write \"*.js\" --fix",
+    "format": "prettier --write \"*.{js,jsx}\"",
+    "format:fix": "prettier --write \"*.{js,jsx}\" --fix",
+```
+
+**For TS**
+
+```
+    "format": "prettier --write \"*.{ts,tsx}\"",
+    "format:fix": "prettier --write \"*.{ts,tsx}\" --fix",
 ```
 
 
->>>>>>> f0df0e6 (fix configs & added documentation for prettier & stylelint)
