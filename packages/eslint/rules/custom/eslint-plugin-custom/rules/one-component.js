@@ -1,5 +1,4 @@
 const { ESLintUtils, AST_NODE_TYPES } = require('@typescript-eslint/utils');
-const { useEffect } = require('react');
 
 module.exports = ESLintUtils.RuleCreator.withoutDocs({
   meta: {

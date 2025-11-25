@@ -2,7 +2,6 @@
 ✅prettier  
 ✅stylelint  
 ✅eslint  
-jest + rtl  
 vitest + rtl  
 storybook  
     

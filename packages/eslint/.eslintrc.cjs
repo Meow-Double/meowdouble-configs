@@ -4,23 +4,25 @@ const allSettings = require('./settings/index.js');
 const allRules = require('./rules/index.js');
 
 // Config:{
-//    test:"jest" | null,
+//    test: false | true,
 //    storybook:true,
 //    defaultRules:{},
+//    defaultOverrides
 //}
 
-module.exports = (
-  config = {
-    test: null,
-    storybook: false,
-    defaultRules: {},
-  },
-) => {
+const defaultCOnfig = {
+  test: false,
+  storybook: false,
+  defaultRules: {},
+  defaultOverrides: [],
+};
+
+module.exports = (config = defaultCOnfig) => {
   const envConfiguration = {
     browser: true,
     es2021: true,
     node: true,
-    jest: config.test === 'jest' ? true : false,
+    jest: config.test === true ? true : false,
   };
 
   const overrideConfiguration =
@@ -66,6 +68,6 @@ module.exports = (
         version: 'detect',
       },
     },
-    overrides: overrideConfiguration,
+    overrides: [...overrideConfiguration, ...config.defaultOverrides],
   };
 };

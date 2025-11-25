@@ -12,7 +12,7 @@
   },
   "scripts": {},
   "workspaces": [
-    "configs/*"
+    "packages/*"
   ],
   "devDependencies": {
   }
