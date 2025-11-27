@@ -1,0 +1,26 @@
+{
+  "name": "eslint-v8",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "lint:ts": "npx eslint --config .eslintrc.cjs \"src/**/*.{ts,tsx}\"",
+    "lint:js": "npx eslint --config .eslintrc.cjs \"src/**/*.{js,jsx}\"",
+    "lint:ts:fix": "npx eslint --config .eslintrc.cjs \"src/**/*.{ts,tsx}\" --fix",
+    "lint:js:fix": "npx eslint --config .eslintrc.cjs \"src/**/*.{js,jsx}\" --fix"
+  },
+  "keywords": [
+    "eslint-v8"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+
+    "eslint": "^8.57.1"
+
+  },
+  "devDependencies": {
+
+  }
+}

@@ -8,16 +8,18 @@ const allRules = require('./rules/index.js');
 //    storybook:true,
 //    defaultRules:{},
 //    defaultOverrides
+//    plugins
 //}
 
-const defaultCOnfig = {
-  test: false,
-  storybook: false,
-  defaultRules: {},
-  defaultOverrides: [],
-};
-
-module.exports = (config = defaultCOnfig) => {
+module.exports = (
+  config = {
+    test: false,
+    storybook: false,
+    defaultRules: {},
+    defaultOverrides: [],
+    plugins: [],
+  },
+) => {
   const envConfiguration = {
     browser: true,
     es2021: true,
@@ -55,7 +57,14 @@ module.exports = (config = defaultCOnfig) => {
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
-    plugins: ['@typescript-eslint', 'react-hooks', 'simple-import-sort', 'import', 'custom'],
+    plugins: [
+      '@typescript-eslint',
+      'react-hooks',
+      'simple-import-sort',
+      'import',
+      'custom',
+      ...plugins,
+    ],
     rules: {
       '@typescript-eslint/no-explicit-any': 'warn',
       ...allRules,

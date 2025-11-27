@@ -2,31 +2,20 @@
   "name": "@meow-double/eslint",
   "description": "Eslint config for your code",
   "license": "MIT",
-  "version": "1.0.1",
-  "main": "index.js",
+  "version": "2.0.2",
+  "type": "module",
   "keywords": [
     "eslint"
   ],
-  "author": {
-    "name": "Meow-Double🦈",
-    "url": "https://github.com/Meow-Double"
-  },
+  "author": "Meow-Double🦈 (https://github.com/Meow-Double)",
   "repository": {
-    "url": "https://github.com/Meow-Double/meowdouble-configs/tree/main/configs/eslint"
+    "url": "git+https://github.com/Meow-Double/meowdouble-configs.git#main"
   },
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    ".eslintrc.cjs",
-    "settings/**/*",
-    "rules/**/*"
-  ],
   "scripts": {
-    "lint:ts": "npx eslint --config .eslintrc.cjs \"src/**/*.{ts,tsx}\"",
-    "lint:js": "npx eslint --config .eslintrc.cjs \"src/**/*.{js,jsx}\"",
-    "lint:ts:fix": "npx eslint --config .eslintrc.cjs \"src/**/*.{ts,tsx}\" --fix",
-    "lint:js:fix": "npx eslint --config .eslintrc.cjs \"src/**/*.{js,jsx}\" --fix"
+    "ts": "npx tsc"
   },
   "lint-staged": {
     "*.js": [
@@ -36,18 +25,35 @@
       "eslint --fix"
     ]
   },
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.32.0",
-    "@typescript-eslint/parser": "^8.32.0",
-    "eslint": "^8.57.1",
-    "eslint-plugin-custom": "file:rules/custom/eslint-plugin-custom",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "eslint-plugin-simple-import-sort": "^12.1.1"
+  "peerDependencies": {
+    "eslint": ">=8.57.0 || >=9.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/utils": "^8.32.0"
-  }
+    "@typescript-eslint/utils": "^8.48.0",
+    "eslint-plugin-custom": "file:rules/custom/eslint-plugin-custom"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.39.1",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^16.5.0",
+    "typescript-eslint": "^8.48.0"
+  },
+  "files": [
+    "v8",
+    "v9-js"
+  ],
+  "exports": {
+    "./v8": "./v8/index.js",
+    "./v9": "./v9-js/eslint.config.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Meow-Double/meowdouble-configs/issues"
+  },
+  "homepage": "https://github.com/Meow-Double/meowdouble-configs/tree/main#readme"
 }

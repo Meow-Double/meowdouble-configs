@@ -104,8 +104,8 @@ You need to add script on your <b>package.json</b>
 **For Scss**
 
 ```
-    "lint:css": "stylelint \"**/*.scss\"",
-    "lint:css:fix": "stylelint \"**/*.scss\" --fix",
+    "lint:scss": "stylelint \"**/*.scss\"",
+    "lint:scss:fix": "stylelint \"**/*.scss\" --fix",
 ```
 
 **For Scss & Css**
