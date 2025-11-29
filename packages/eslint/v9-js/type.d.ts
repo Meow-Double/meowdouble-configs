@@ -4,7 +4,7 @@ export interface DefaultOptionsType {
     globals: {
         tests: null | 'jest' | 'vitest';
         es: 'es2024';
-        other: any;
+        other: eslint['languageOptions']['globals'];
     };
     ignore: string[];
     defaultRules: {

@@ -1,10 +1,10 @@
 import config9 from '@meow-double/eslint/v9';
 
 export default config9({
-  ignore: [],
+  ignore: ['storybook-static'],
   config: [
     {
-      files: ['**/src/**/*.{test,stories}.{ts,tsx}', '**/src/**/*Icon.tsx'],
+      files: ['**/src/**/*Icon.tsx'],
       rules: {
         'max-len': 'off',
       },
@@ -28,5 +28,5 @@ export default config9({
     es: 'es2024',
     tests: 'vitest',
   },
-  project: [],
+  project: ['tsconfig.app.json'],
 });

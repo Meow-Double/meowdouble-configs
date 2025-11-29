@@ -29,6 +29,7 @@
     "eslint": ">=8.57.0 || >=9.0.0"
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
     "@typescript-eslint/utils": "^8.48.0",
     "eslint-plugin-custom": "file:rules/custom/eslint-plugin-custom"
   },

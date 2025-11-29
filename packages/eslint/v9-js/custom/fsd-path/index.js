@@ -18,7 +18,6 @@ export default ESLintUtils.RuleCreator.withoutDocs({
             ImportDeclaration(node) {
                 const importTo = node.source.value;
                 const fromFileName = context.getFilename();
-                console.log(shouldBeRelative(fromFileName, importTo));
                 if (shouldBeRelative(fromFileName, importTo)) {
                     context.report({
                         node,

@@ -36,61 +36,64 @@ export default (
   const otherPlugins: any = {};
   const otherRules: any = {};
 
+  const ignores = ['node_modules', 'dist', ...options.ignore];
+
   if (options.fsd) {
     otherPlugins['fsd-path'] = fsdPath;
     otherRules['fsd-path/slice-path'] = 'error';
   }
-  console.log(otherPlugins, otherRules);
-  return tseslint.config(
-    js.configs.recommended,
-    ...tseslint.configs.recommended,
-    {
-      plugins: {
-        '@typescript-eslint': tseslint.plugin,
-        'react-hooks': eslintReactHooks,
-        'react-refresh': eslintReactRefresh,
-        'simple-import-sort': eslintSimpleImport,
-        import: eslintImport,
-        react: eslintReact,
-        ...otherPlugins,
-        ...options.plugins,
-      },
-      ignores: ['node_modules', 'dist', ...options.ignore],
-    },
-    {
-      languageOptions: {
-        globals: {
-          ...globals.node,
-          ...globals.browser,
-          ...globals[options.globals.es || 'es2024'],
-          ...(options.globals.tests && globals[options.globals.tests]),
-          ...options.globals.other,
+
+  return [
+    { ignores },
+    ...tseslint.config(
+      js.configs.recommended,
+      ...tseslint.configs.recommended.map((config) => ({
+        ...config,
+      })),
+      {
+        settings,
+        plugins: {
+          '@typescript-eslint': tseslint.plugin,
+          'react-hooks': eslintReactHooks,
+          'react-refresh': eslintReactRefresh,
+          'simple-import-sort': eslintSimpleImport,
+          import: eslintImport,
+          react: eslintReact,
+          ...otherPlugins,
+          ...options.plugins,
         },
-        parserOptions: {
-          project: options.project,
+        files: ['**/*.{ts,tsx}', ...options.defaultRules.files],
+        rules: {
+          '@typescript-eslint/no-explicit-any': 'warn',
+          ...defaultRules,
+          ...importRules,
+          ...reactHooksRules,
+          ...reactRules,
+          ...otherRules,
+          ...options.defaultRules.rules,
+        },
+        languageOptions: {
+          globals: {
+            ...globals.node,
+            ...globals.browser,
+            ...globals[options.globals.es || 'es2024'],
+            ...(options.globals.tests && globals[options.globals.tests]),
+            ...options.globals.other,
+          },
+          parser: tseslint.parser,
+          parserOptions: {
+            ecmaVersion: 'latest',
+            sourceType: 'module',
+            ecmaFeatures: {
+              jsx: true,
+            },
+            project: options.project,
+            tsconfigRootDir: process.cwd(),
+          },
         },
       },
-    },
-    {
-      settings,
-      ignores: ['node_modules', 'dist', ...options.ignore],
-      files: ['**/*.{ts,tsx}', ...options.defaultRules.files],
-      rules: {
-        '@typescript-eslint/no-explicit-any': 'warn',
-        ...defaultRules,
-        ...importRules,
-        ...reactHooksRules,
-        ...reactRules,
-        ...otherRules,
-        ...options.defaultRules.rules,
-      },
-    },
-    {
-      files: ['**/src/**/*.{test,spec,stories}.{ts,tsx}'],
-      rules: {
-        'max-len': 'off',
-      },
-    },
-    ...options.config,
-  );
+
+      ...options.config,
+    ),
+  ];
 };

@@ -1,4 +1,4 @@
-import { SD } from '../sd/index';
+import { SD } from '@/features/sd';
 
 export const Index = () => {
   return (

@@ -28,13 +28,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "src",
-    "**/*.ts",
-    "**/*.tsx",
-    "@types/vite-env.d.ts",
-    "./configs/**/*.ts",
-    "configs/storybook/**/*.ts",
-    "configs/vitest/setup.ts"
-  ]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "config", "@types/vite-env.d.ts", "vite.config.ts"],
+  "exclude": ["storybook-static"]
 }
